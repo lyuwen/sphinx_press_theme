@@ -1,16 +1,24 @@
 <navbar @toggle-sidebar="toggleSidebar">
-  <router-link to="{{pathto(master_doc)}}" class="home-link">
-    {% if logo %}
-      <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="logo"/>
-    {% else %}
-      <span class="site-name">{{ project|e }}</span>
-    {% endif %}
-  </router-link>
-
+  <div class="pagetitle">
+    <router-link to="{{pathto(master_doc)}}" class="home-link">
+      {% if logo %}
+        <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="logo"/>
+      {% else %}
+        <span class="site-name">{{ project|e }}</span>
+      {% endif %}
+    </router-link>
+  </div>
   <div class="links">
     <navlinks class="can-hide">
-      {%- include "util/navlinks.html" %}
-      {%- include "util/extlinks.html" %}
+      <div class="navlinks">
+        {%- include "util/navlinks.html" %}
+      </div>
+      <div class="navlinks">
+        {%- include "util/searchbar.html" %}
+      </div>
+      <div class="extlinks">
+        {%- include "util/extlinks.html" %}
+      </div>
     </navlinks>
   </div>
 </navbar>
