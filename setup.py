@@ -20,6 +20,7 @@ setup(
             "util/*.html",
             "static/*.css",
             "static/*.js",
+            "static/*.svg",
         ]
     },
     entry_points={"sphinx.html_themes": ["press = sphinx_press_theme"]},
